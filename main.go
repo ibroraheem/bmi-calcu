@@ -18,6 +18,17 @@ func calculate(weight, height float64) float64 {
 	fmt.Scan(&height)
 	denom := math.Pow(height, 2)
 	result := weight / denom
-	fmt.Printf("Your BMI is: %.2f", result)
-	return result
+	if result < 18.0 {
+		fmt.Printf("Your BMI is: %.2f. You are underweight", result)
+		return result
+	} else if result >= 18.0 && result < 25.0 {
+		fmt.Printf("Your BMI is: %.2f. You have healthy weight", result)
+		return result
+	} else if result >= 25.0 && result < 30 {
+		fmt.Printf("Your BMI is: %.2f. You are overweight", result)
+		return result
+	} else {
+		fmt.Printf("Your BMI is: %.2f. You have obesity", result)
+		return result
+	}
 }
